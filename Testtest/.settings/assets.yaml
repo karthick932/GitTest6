@@ -1,0 +1,64 @@
+name: Testtest
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /Testtest/src
+        type: javaClasspath
+  - name: 'Compound Tests'
+    resources: 
+  - name: Datasets
+    resources: 
+  - name: 'JMeter Tests'
+    resources: 
+  - name: Locations
+    resources: 
+  - name: Results
+    resources: 
+  - name: Schedules
+    resources: 
+      - name: TestVU.testsuite
+        type: com.ibm.rational.test.lt.schedule
+        version: 11.0.4.0
+        properties: 
+          description: 'Stages:
+
+	users=6; duration=Run Until Finished
+
+User Group 1: Group Size 50.0 percent
+
+	Test(s): test
+
+User Group 2: Group Size 50.0 percent
+
+	Test(s): Copy of test
+
+'
+          name: TestVU
+          type: com.ibm.rational.test.common.schedule.Schedule
+          uid: A1F007211A439FC0EF23E43632633930
+        dependencies: 
+          - path: '/Testtest/Tests/Copy of test.testsuite'
+            type: scheduleInvokedTest
+          - path: /Testtest/Tests/test.testsuite
+            type: scheduleInvokedTest
+  - name: Tests
+    resources: 
+      - name: 'Copy of test.testsuite'
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties: 
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F0072134BA60EAEF23E43632633930
+      - name: test.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties: 
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F007210D19B870EF23E43632633930
+  - name: src
+    resources: 
