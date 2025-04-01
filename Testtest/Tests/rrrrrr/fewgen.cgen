@@ -1,0 +1,24 @@
+{
+  "name" : "fewgen",
+  "version" : "0.0.1",
+  "categoryId" : "9b45a493-c0aa-4cfd-85a4-93c0aa8cfd73",
+  "parentGenerator" : "Boolean",
+  "globalProperties" : {
+    "randomDistribution" : "false",
+    "blankPercentage" : "0"
+  },
+  "configurations" : [ {
+    "name" : "Default",
+    "weightage" : 100.0,
+    "properties" : {
+      "list" : [ {
+        "value" : "Yes",
+        "distribution" : 60
+      }, {
+        "value" : "No",
+        "distribution" : 40
+      } ],
+      "random" : true
+    }
+  } ]
+}
